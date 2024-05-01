@@ -9,9 +9,9 @@ import java.math.BigDecimal;
 import java.time.ZonedDateTime;
 
 @RestController
-@RequestMapping
+@RequestMapping("/orders")
 public class OrderController {
-    @GetMapping("/orders")
+    @GetMapping("/{id}")
     public Order findById(@PathVariable Long id){
         return new Order(id, 1L, ZonedDateTime.now(), BigDecimal.TEN);
     }
