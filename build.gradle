@@ -28,6 +28,14 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
+tasks.named('bootBuildImage') {
+	builder = 'paketobuildpacks/builder-jammy-base:lastest'
+}
+
 tasks.named('test') {
 	useJUnitPlatform()
+}
+
+bootJar{
+	archiveFileName = "app.jar"
 }
